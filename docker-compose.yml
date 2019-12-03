@@ -1,0 +1,18 @@
+version: "3.0"
+services:
+  chat-app:
+    image: node:12.13.1-slim
+    volumes: 
+      - ./chat-app:/app
+    working_dir: /app
+    command: bash -c "yarn && yarn run start"
+    ports: 
+      - 3000:80
+  auth-server:
+    image: node:12.13.1-slim
+    volumes: 
+      - ./auth-server:/app
+    working_dir: /app
+    command: bash -c "yarn && yarn run start"
+    ports: 
+      - 3001:80
