@@ -1,15 +1,21 @@
 {
   "name": "chat-app",
   "version": "1.0.0",
-  "description": "chatkit client app",
-  "main": "index.js",
+  "description": "client chat application",
   "author": "taka521",
-  "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
-    "start": "node index.js"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@pusher/chatkit-client": "^1.13.2",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
 }

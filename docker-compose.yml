@@ -5,9 +5,9 @@ services:
     volumes: 
       - ./chat-app:/app
     working_dir: /app
-    command: bash -c "yarn && yarn run start"
+    command: bash -c "yarn && yarn dev"
     ports: 
-      - 3000:80
+      - 3000:3000
   auth-server:
     image: node:12.13.1-slim
     volumes: 
