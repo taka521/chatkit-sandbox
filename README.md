@@ -55,6 +55,6 @@ CHATKIT_TEST_TOKEN_PROVIDER_ENDPOINT=[your instance test token provider endpoint
 
 ```
 CHATKIT_INSTANCE_LOCATOR=[your instance locator]
-TOKEN_PROVIDER_URL=http:localhost:3001/auth
+TOKEN_PROVIDER_URL=http:localhost:3001/token
 ```
 
