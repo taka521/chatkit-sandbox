@@ -40,8 +40,18 @@ Chatkitに登録し、インスタンスを作成してください。
 
 ### 環境変数の設定
 
-auth-server と chat-app プロジェクト配下で以下の環境変数を設定してください。  
+当プロジェクトの直下で以下の環境変数をexportしてください。  
 `direnv`の利用を想定しています。
+
+```
+CHATKIT_INSTANCE_LOCATOR=[your instance locator]
+CHATKIT_PRIVATE_KEY=[your instance private key]
+CHATKIT_TEST_TOKEN_PROVIDER_ENDPOINT=[your instance test token provider endpoint]
+TOKEN_PROVIDER_URL=http:localhost:3001/token
+```
+
+もしDockerコンテナではなく、ローカルマシン上で直接 auth-server, chat-app を動かしたい場合は、
+各プロジェクト配下に環境変数をexportしてください。
 
 * auth-server
 
