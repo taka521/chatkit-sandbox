@@ -113,6 +113,8 @@ app.put("/user", async (req, res) => {
   想定としてはクライアントはリクエストヘッダ(Authorization)に自サービスで発行されたトークン（JWT等）を提出。
   提出されたトークンに問題がなければChatkitに問い合わせを行い、Chatkit用のトークンを返却します。
 
+  今回はJWTではなく、X-USER-IDヘッダからユーザIDを取得する。
+
   レスポンスは、Chatkitが要求するレスポンス形式に合わせる。
   ・https://pusher.com/docs/chatkit/reference/javascript#tokenprovider-arguments
 
@@ -124,7 +126,8 @@ app.put("/user", async (req, res) => {
 */
 app.post("/token", async (req, res) => {
   console.log(`=== start ${req.path} ===`);
-  console.log("request header : ", req.headers)
+  console.log("request header : ", req.headers);
+  console.log("request query :", req.query);
   console.log("request body : ", req.body);
 
   // 提出された自サービスのトークンを検証（するつもり）
@@ -132,7 +135,7 @@ app.post("/token", async (req, res) => {
 
   // Chatkitの認証
   const authData = chatkit.authenticate({
-    userId: req.body.id
+    userId: req.headers['X-USER-ID']
   });
   console.log("authData : ", authData);
 
