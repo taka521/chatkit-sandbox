@@ -10,7 +10,7 @@ services:
       - 3000:3000
     environment:
       - CHATKIT_INSTANCE_LOCATOR=${CHATKIT_INSTANCE_LOCATOR}
-      - TOKEN_PROVIDER_URL=http:localhost:3001/token
+      - TOKEN_PROVIDER_URL=/auth/token
   auth-server:
     image: node:12.13.1-slim
     volumes: 

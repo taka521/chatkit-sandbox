@@ -1,5 +1,12 @@
 <template>
   <div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <p class="navbar-item">Chatkit Sample Application</p>
+        </div>
+      </div>
+    </nav>
     <nuxt />
   </div>
 </template>
@@ -15,6 +22,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 *,
@@ -51,5 +60,13 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

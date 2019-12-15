@@ -2,6 +2,7 @@
 export default {
   srcDir: 'app/',
   mode: 'spa',
+
   /*
   ** Headers of the page
   */
@@ -16,25 +17,35 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  env: {
+    instanceLocator: process.env.CHATKIT_INSTANCE_LOCATOR || '',
+    tokenProviderUrl: process.env.TOKEN_PROVIDER_URL || ''
+  },
+
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+
   /*
   ** Global CSS
   */
   css: [
   ],
+
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
   ],
+
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
   ],
+
   /*
   ** Nuxt.js modules
   */
@@ -44,13 +55,29 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+
+    '@nuxtjs/proxy',
   ],
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
   },
+
+  /**
+   * Proxy module configuration
+   * CROSのためにプロキシを立てる
+   */
+  proxy: {
+    "/auth/": {
+      target: "http://localhost:3001",
+      pathRewrite: { '^/auth/': '/' }
+    }
+  },
+
   /*
   ** Build configuration
   */
@@ -65,7 +92,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

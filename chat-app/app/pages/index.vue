@@ -1,72 +1,40 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        chat-app
-      </h1>
-      <h2 class="subtitle">
-        client chat application
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="columns">
+    <!-- side menu -->
+    <div class="column is-one-quarter">
+    <aside class="menu">
+      <p class="menu-label">General</p>
+      <ul class="menu-list">
+        <li>
+          <a>Dashboard</a>
+        </li>
+        <li>
+          <a>Customers</a>
+        </li>
+      </ul>
+      <p class="menu-label">Rooms</p>
+      <ul class="menu-list" id="room-list">
+        <li><a href="#">Tanaka</a></li>
+        <li><a href="#">Saito</a></li>
+      </ul>
+    </aside>
+    </div>
+    <!-- chat -->
+    <div class="column" id="chat-room">
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {};
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style scoped>
+.columns {
+  margin: 10px;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+#chat-room {
+  background-color: skyblue;
 }
 </style>

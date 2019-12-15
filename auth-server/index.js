@@ -135,14 +135,16 @@ app.post("/token", async (req, res) => {
 
   // Chatkitの認証
   const authData = chatkit.authenticate({
-    userId: req.headers['X-USER-ID']
+    userId: req.headers['x-user-id']
   });
   console.log("authData : ", authData);
 
   const { access_token, expires_in } = authData.body;
+
+  console.log("access_token : ", jwt.decode(access_token));
+
   res.status(authData.status)
-    .set(authData.headers)
-    .send({ access_token, expires_in })
+    .send(authData.body)
     .end();
 
   console.log(`=== end ${req.path} ===`);
