@@ -47,7 +47,7 @@ Chatkitに登録し、インスタンスを作成してください。
 CHATKIT_INSTANCE_LOCATOR=[your instance locator]
 CHATKIT_PRIVATE_KEY=[your instance private key]
 CHATKIT_TEST_TOKEN_PROVIDER_ENDPOINT=[your instance test token provider endpoint]
-TOKEN_PROVIDER_URL=http:localhost:3001/token
+TOKEN_PROVIDER_URL=/auth/token
 ```
 
 もしDockerコンテナではなく、ローカルマシン上で直接 auth-server, chat-app を動かしたい場合は、
@@ -65,6 +65,6 @@ CHATKIT_TEST_TOKEN_PROVIDER_ENDPOINT=[your instance test token provider endpoint
 
 ```
 CHATKIT_INSTANCE_LOCATOR=[your instance locator]
-TOKEN_PROVIDER_URL=http:localhost:3001/token
+TOKEN_PROVIDER_URL=/auth/token
 ```
 
