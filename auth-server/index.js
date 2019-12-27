@@ -153,8 +153,8 @@ app.post("/token", async (req, res) => {
 // =======================================
 // start server
 // =======================================
-app.listen(80)
-console.log("started auth server http://localhost:80 .")
+app.listen(3001)
+console.log("started auth server http://localhost:3001 .")
 
 
 // =======================================

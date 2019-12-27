@@ -59,6 +59,12 @@ export default {
     '@nuxtjs/proxy',
   ],
 
+  // デフォルトではlocalhost(127.0.0.0)からしかリクエストを受け付けない
+  // ホストマシンからコンテナへアクセスするために、ホストを0.0.0.0に設定する
+  server: {
+    host: '0.0.0.0'
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
