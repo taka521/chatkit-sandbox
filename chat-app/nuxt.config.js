@@ -79,7 +79,7 @@ export default {
    */
   proxy: {
     "/auth/": {
-      target: "http://localhost:3001",
+      target: "http://auth-server:3001",
       pathRewrite: { '^/auth/': '/' }
     }
   },
