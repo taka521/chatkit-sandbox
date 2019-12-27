@@ -15,6 +15,7 @@
           </div>
         </div>
         <div class="field is-grouped is-grouped-right">
+          <button class="button mr10" @click="onSignUp">新規登録</button>
           <button class="button is-primary" @click="onSubmit">ログイン</button>
         </div>
       </div>
@@ -39,6 +40,9 @@ export default {
       if (result) {
         this.$router.push("/");
       }
+    },
+    async onSignUp() {
+      this.$router.push("/signUp")
     }
   }
 };
@@ -48,5 +52,8 @@ export default {
 .card {
   width: 500px;
   height: auto;
+}
+.mr10 {
+  margin-right: 10px;
 }
 </style>

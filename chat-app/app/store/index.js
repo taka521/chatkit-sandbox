@@ -107,5 +107,23 @@ export const actions = {
     commit("SET_ROOMS", rooms);
 
     return true;
+  },
+
+  /**
+   * ユーザ作成処理
+   * 
+   * @param {any} nuxtContext Nuxtコンテキスト
+   * @param {any} UserInfo ユーザ情報
+   */
+  async createUser({ commit }, { userId, username }) {
+    try {
+      // ユーザ作成
+      await this.$axios.$put("/auth/user/", { id: userId, name: username })
+        .then(res => console.log(`crate user. id = ${userId}, name = ${username}`));
+      return true;
+    } catch (e) {
+      console.warn("ユーザ作成処理でエラーが発生.", e);
+      return false;
+    }
   }
 }
