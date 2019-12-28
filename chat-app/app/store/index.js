@@ -18,7 +18,9 @@ export const state = () => ({
 })
 
 /** Getters */
-export const getters = {}
+export const getters = {
+  isLogined: (state) => state.isLogined
+}
 
 /** Mutations */
 export const mutations = {

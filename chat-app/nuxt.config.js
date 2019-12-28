@@ -65,6 +65,11 @@ export default {
     host: '0.0.0.0'
   },
 
+  // ミドルウェアの適用
+  router: {
+    middleware: 'authentication'
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
