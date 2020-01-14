@@ -21,6 +21,7 @@ https://pusher.com/chatkit
 ## 参考資料
 
 * https://www.sitepoint.com/pusher-vue-real-time-chat-app/
+* https://github.com/pusher/chatkit-server-node/tree/master/examples
 
 
 ## 環境構築
